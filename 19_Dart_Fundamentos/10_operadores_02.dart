@@ -17,11 +17,13 @@ main() {
   print(3 <= 3);
   print(3 != 3);
   print(3 == 3);
-  print(3 == '3');
+  print(3 == '3'); // false
   print(2 + 5 > 3 - 1 && 4 + 7 != 7 - 4);
 
   // 101 = 5
   // 100 = 4
   // 100 = 4
+
+  // Operação bit a bit - bitwise
   print(5 & 4);
 }

@@ -12,8 +12,15 @@ class Data {
   //   this.ano = ano;
   // }
 
-  // Construtor menos verboso
+  // Construtor menos verboso e com parâmetros opcionais
   Data([this.dia = 1, this.mes = 1, this.ano = 1970]);
+
+  // Construtores nomeados
+  Data.com({this.dia = 1, this.mes = 1, this.ano = 1970});
+  Data.ultimoDiaAno(this.ano) {
+    dia = 31;
+    mes = 12;
+  }
 
   imprimeData() {
     print(obterDataFormatada());
@@ -72,4 +79,12 @@ main() {
   print(Data(31));
   print(Data(31, 12));
   print(Data(31, 12, 2021));
+
+  // Construtor com parâmetros nomeados
+  print(Data.com(ano: 2022));
+
+  var dataFinal = Data.com(dia: 15, mes: 10, ano: 2024);
+  print("O Pato Donald será público em $dataFinal");
+
+  print(Data.ultimoDiaAno(2023));
 }

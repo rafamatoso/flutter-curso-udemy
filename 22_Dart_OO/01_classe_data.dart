@@ -3,6 +3,18 @@ class Data {
   int? mes;
   int? ano;
 
+  // Construtor padrão - Método com o mesmo nome da classe
+  // Ele já existe implicitamente
+  // Quando se define os parâmetros, ele passa a existir explicitamente
+  // Data(int dia, int mes, int ano) {
+  //   this.dia = dia;
+  //   this.mes = mes;
+  //   this.ano = ano;
+  // }
+
+  // Construtor menos verboso
+  Data([this.dia = 1, this.mes = 1, this.ano = 1970]);
+
   imprimeData() {
     print(obterDataFormatada());
   }
@@ -17,13 +29,13 @@ class Data {
   }
 }
 
-main(List<String> args) {
+main() {
   // 1 - Instanciando um objeto
-  var dataAniversario = new Data();
+  var dataAniversario = new Data(14, 10, 1988);
 
-  dataAniversario.dia = 14;
-  dataAniversario.mes = 10;
-  dataAniversario.ano = 1988;
+  // dataAniversario.dia = 14;
+  // dataAniversario.mes = 10;
+  // dataAniversario.ano = 1988;
 
   // print(dataAniversario);
   //print("${dataAniversario.dia}-${dataAniversario.mes}-${dataAniversario.ano}");
@@ -33,11 +45,11 @@ main(List<String> args) {
   print("Data de aniversário é $data1");
 
   // 2 - Instanciando um novo objeto
-  Data dataCompra = Data();
+  Data dataCompra = Data(11, 11, 2014);
 
-  dataCompra.dia = 11;
-  dataCompra.mes = 11;
-  dataCompra.ano = 2014;
+  // dataCompra.dia = 11;
+  // dataCompra.mes = 11;
+  // dataCompra.ano = 2014;
 
   //print("${dataCompra.dia}-${dataCompra.mes}-${dataCompra.ano}");
   dataCompra.imprimeData();
@@ -54,4 +66,10 @@ main(List<String> args) {
   //Data d4 = dataCompra.toString();
   String d4 = dataCompra.toString();
   print("Data da compra usando toString é $d4");
+
+  // Construtor com parâmetros opcionais
+  print(new Data());
+  print(Data(31));
+  print(Data(31, 12));
+  print(Data(31, 12, 2021));
 }

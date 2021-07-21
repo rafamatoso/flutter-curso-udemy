@@ -15,5 +15,6 @@ main() {
 
   // Quebra a regra de negócia dentro da Classe Carro
   c1.velocidadeAtual = 500;
+  c1.velocidadeAtual = 3;
   print("O carro parou com velocidade ${c1.velocidadeAtual} Km/h.");
 }

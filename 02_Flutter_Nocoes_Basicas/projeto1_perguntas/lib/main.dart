@@ -4,6 +4,10 @@ import 'package:flutter/widgets.dart';
 main() => runApp(PerguntaApp());
 
 class PerguntaApp extends StatelessWidget {
+  void responder() {
+    print('Resposta 1 Selecionada');
+  }
+
   @override
   Widget build(BuildContext context) {
     final List<String> perguntas = [
@@ -21,15 +25,19 @@ class PerguntaApp extends StatelessWidget {
             Text(perguntas[0]),
             ElevatedButton(
               child: Text('Resposta 1'),
-              onPressed: null,
+              onPressed: responder, // passando uma função sem invocar
             ),
             ElevatedButton(
               child: Text('Resposta 2'),
-              onPressed: null,
+              onPressed: () {
+                // função anônima
+                print('Resposta 2 Selecionada!');
+              },
             ),
             ElevatedButton(
               child: Text('Resposta 3'),
-              onPressed: null,
+              onPressed: () =>
+                  print('Resposta 3 Selecionada!'), // arrow function
             )
           ],
         ),
